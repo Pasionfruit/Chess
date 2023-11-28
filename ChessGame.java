@@ -6,6 +6,8 @@ import java.io.File;
 import java.util.Scanner;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ChessGame extends JFrame {
     private static final int BOARD_SIZE = 8;
@@ -19,7 +21,6 @@ public class ChessGame extends JFrame {
         JPanel menuPanel = createMenuPanel();
         add(menuPanel);
 
-        // Center the frame on the screen
         setLocationRelativeTo(null);
         setVisible(true);
     }
@@ -32,20 +33,29 @@ public class ChessGame extends JFrame {
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
         panel.add(titleLabel, BorderLayout.NORTH);
 
-        JPanel buttonPanel = new JPanel(new GridLayout(5, 1));
-        JButton onePlayerButton = new JButton("One Player");
-        JButton twoPlayersButton = new JButton("Two Players");
+        
+        JPanel buttonPanel = new JPanel(new GridLayout(6, 1));
+
+        JLabel players = new JLabel("Number of Players");
+        JLabel timer = new JLabel("Duration of the Game");
+        players.setFont(new Font("Arial", Font.BOLD, 14));
+        timer.setFont(new Font("Arial", Font.BOLD, 14));
+
+        JPanel playerPanel = new JPanel(new GridLayout(1, 2));
+        JRadioButton onePlayerButton = new JRadioButton("One Player");
+        JRadioButton twoPlayersButton = new JRadioButton("Two Players");
+
         JButton rulesButton = new JButton("Rules");
         JButton startGameButton = new JButton("Start");
 
         JPanel durationPanel = new JPanel(new GridLayout(1, 5));
-        JButton oneMinuteButton = new JButton("1 MIN");
-        JButton threeMinuteButton = new JButton("3 MIN");
-        JButton fiveMinuteButton = new JButton("5 MIN");
-        JButton tenMinuteButton = new JButton("10 MIN");
-        JButton noTimerButton = new JButton("∞");
+        JRadioButton oneMinuteButton = new JRadioButton("1 MIN");
+        JRadioButton threeMinuteButton = new JRadioButton("3 MIN");
+        JRadioButton fiveMinuteButton = new JRadioButton("5 MIN");
+        JRadioButton tenMinuteButton = new JRadioButton("10 MIN");
+        JRadioButton noTimerButton = new JRadioButton("∞");
 
-
+        /*
         onePlayerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -59,13 +69,14 @@ public class ChessGame extends JFrame {
                 handleMenuSelection(2);
             }
         });
-
+        */
         rulesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 showRulesDialog();
             }
         });
+        
 
         durationPanel.add(oneMinuteButton);
         durationPanel.add(threeMinuteButton);
@@ -73,10 +84,14 @@ public class ChessGame extends JFrame {
         durationPanel.add(tenMinuteButton);
         durationPanel.add(noTimerButton);
 
-        buttonPanel.add(onePlayerButton);
-        buttonPanel.add(twoPlayersButton);
-        buttonPanel.add(rulesButton);
+        playerPanel.add(onePlayerButton);
+        playerPanel.add(twoPlayersButton);
+
+        buttonPanel.add(players);
+        buttonPanel.add(playerPanel);
+        buttonPanel.add(timer);
         buttonPanel.add(durationPanel);
+        buttonPanel.add(rulesButton);
         buttonPanel.add(startGameButton);
 
         panel.add(buttonPanel, BorderLayout.CENTER);
@@ -86,15 +101,13 @@ public class ChessGame extends JFrame {
 
     private void showRulesDialog() {
         JFrame rulesFrame = new JFrame("Chess Rules");
-        rulesFrame.setSize(800, 600);
+        rulesFrame.setSize(1280, 711);
         rulesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         try {
-            // Load the image from file
             File imageFile = new File("Chess_Rules.jpg");
             Image image = ImageIO.read(imageFile);
 
-            // Create a JLabel to display the image
             JLabel imageLabel = new JLabel(new ImageIcon(image));
             rulesFrame.add(imageLabel);
 
@@ -127,9 +140,6 @@ public class ChessGame extends JFrame {
             // Add logic for one-player mode
         } else if (players == 2) {
             System.out.println("Two players mode selected.");
-            playTwoPlayersGame();  // Removed the argument
-        } else if (players == 3) {
-            System.out.println("You made it here");
             playTwoPlayersGame();  // Removed the argument
         } else {
             System.out.println("Invalid choice. Exiting the game.");
