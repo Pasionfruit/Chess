@@ -2,7 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.Scanner;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 public class ChessGame extends JFrame {
     private static final int BOARD_SIZE = 8;
@@ -60,7 +63,7 @@ public class ChessGame extends JFrame {
         rulesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                handleMenuSelection(3);
+                showRulesDialog();
             }
         });
 
@@ -79,6 +82,39 @@ public class ChessGame extends JFrame {
         panel.add(buttonPanel, BorderLayout.CENTER);
 
         return panel;
+    }
+
+    private void showRulesDialog() {
+        JFrame rulesFrame = new JFrame("Chess Rules");
+        rulesFrame.setSize(800, 600);
+        rulesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        try {
+            // Load the image from file
+            File imageFile = new File("Chess_Rules.jpg");
+            Image image = ImageIO.read(imageFile);
+
+            // Create a JLabel to display the image
+            JLabel imageLabel = new JLabel(new ImageIcon(image));
+            rulesFrame.add(imageLabel);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        // Create "Go Back" button
+        JButton goBackButton = new JButton("Go Back");
+        goBackButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                rulesFrame.dispose(); // Close the rules window
+            }
+        });
+        rulesFrame.add(goBackButton, BorderLayout.SOUTH);
+
+        // Center the frame on the screen
+        rulesFrame.setLocationRelativeTo(null);
+        rulesFrame.setVisible(true);
     }
 
     private void handleMenuSelection(int players) {
