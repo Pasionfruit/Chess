@@ -57,6 +57,13 @@ public class ChessGame extends JFrame {
             }
         });
 
+        rulesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleMenuSelection(3);
+            }
+        });
+
         durationPanel.add(oneMinuteButton);
         durationPanel.add(threeMinuteButton);
         durationPanel.add(fiveMinuteButton);
@@ -84,6 +91,9 @@ public class ChessGame extends JFrame {
             // Add logic for one-player mode
         } else if (players == 2) {
             System.out.println("Two players mode selected.");
+            playTwoPlayersGame();  // Removed the argument
+        } else if (players == 3) {
+            System.out.println("You made it here");
             playTwoPlayersGame();  // Removed the argument
         } else {
             System.out.println("Invalid choice. Exiting the game.");
