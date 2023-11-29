@@ -81,6 +81,7 @@ public class ChessGame extends JFrame {
         // Buttons for rules and start initalized
         JButton rulesButton = new JButton("Rules");
         JButton startGameButton = new JButton("Start");
+        startGameButton.setEnabled(false);
         
         // Adds the buttons to the panel
         buttonPanel.add(players);
@@ -114,8 +115,8 @@ public class ChessGame extends JFrame {
                 showRulesDialog();
             }
         });
-        
-        onePlayerButton.addItemListener(itemListener);
+
+        onePlayerButton.addItemListener(itemListener); 
         twoPlayersButton.addItemListener(itemListener);
         oneMinuteButton.addItemListener(itemListener);
         threeMinuteButton.addItemListener(itemListener);
@@ -137,7 +138,7 @@ public class ChessGame extends JFrame {
 
     private void showRulesDialog() {
         JFrame rulesFrame = new JFrame("Chess Rules");
-        rulesFrame.setSize(1280, 711);
+        rulesFrame.setSize(1300, 800);
         rulesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         try {
@@ -166,49 +167,66 @@ public class ChessGame extends JFrame {
         rulesFrame.setVisible(true);
     }
 
+    public class ChessBoardPanel extends JPanel {
+        private static final int SQUARE_SIZE = 100; // Adjust this based on your preference
+        private static final int BOARD_SIZE = 8;
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+
+            // Draw the chessboard
+            for (int i = 0; i < BOARD_SIZE; i++) {
+                for (int j = 0; j < BOARD_SIZE; j++) {
+                    Color color = (i + j) % 2 == 0 ? Color.WHITE : Color.GRAY;
+                    g.setColor(color);
+                    g.fillRect(j * SQUARE_SIZE, i * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
+                }
+            }
+
+            // Draw the pieces
+            for (int i = 0; i < BOARD_SIZE; i++) {
+                for (int j = 0; j < BOARD_SIZE; j++) {
+                    if (board[i][j] != '-') {
+                        drawPiece(g, j * SQUARE_SIZE, i * SQUARE_SIZE, board[i][j]);
+                    }
+                }
+            }
+        }
+
+        private void drawPiece(Graphics g, int x, int y, char piece) {
+            // Implement drawing logic for each piece type
+            // Example: g.drawString(String.valueOf(piece), x + SQUARE_SIZE / 2, y + SQUARE_SIZE / 2);
+        }
+    }
+    
+    private JPanel createGamePanel() {
+        JPanel gamePanel = new JPanel();
+        gamePanel.setLayout(new BorderLayout());
+
+        JLabel test = new JLabel("Welcome to Chess", SwingConstants.CENTER);
+        test.setFont(new Font("Arial", Font.BOLD, 20));
+        gamePanel.add(test, BorderLayout.NORTH);
+
+        // Create a panel for the chessboard (you need to implement ChessBoardPanel)
+        ChessBoardPanel chessBoardPanel = new ChessBoardPanel();
+        gamePanel.add(chessBoardPanel, BorderLayout.CENTER);
+
+        JButton goBackButton = new JButton("Go Back");
+        gamePanel.add(goBackButton, BorderLayout.SOUTH);
+
+        return gamePanel;
+    }
+
     private void handleMenuSelection(int players) {
         getContentPane().removeAll();
         revalidate();
         repaint();
 
-        if (players == 1) {
-            System.out.println("One player mode selected.");
-            // Add logic for one-player mode
-        } else if (players == 2) {
-            System.out.println("Two players mode selected.");
-            playTwoPlayersGame();  // Removed the argument
-        } else {
-            System.out.println("Invalid choice. Exiting the game.");
-            System.exit(0);
-        }
-    }
-
-    private boolean isValidMove(String move) {
-        // Placeholder implementation, replace with actual validation logic
-        return true;
-    }
-
-    private void makeMove(String move) {
-        // Placeholder implementation, replace with actual move logic
-        System.out.println("Move made: " + move);
-    }
-
-    private void playTwoPlayersGame() {
-        Scanner scanner = new Scanner(System.in);  // Create a Scanner instance
-        initializeBoard();
-        displayBoard();
-
-        while (true) {
-            System.out.println("Enter move (e.g., e2 e4): ");
-            String move = scanner.nextLine();
-
-            if (isValidMove(move)) {
-                makeMove(move);
-                displayBoard();
-            } else {
-                System.out.println("Invalid move. Try again.");
-            }
-        }
+        // Display the game interface panel
+        getContentPane().add(createGamePanel());
+        revalidate();
+        repaint();
     }
 
     private static void initializeBoard() {
@@ -249,5 +267,33 @@ public class ChessGame extends JFrame {
         SwingUtilities.invokeLater(() -> {
             new ChessGame();
         });
+    }
+
+    private boolean isValidMove(String move) {
+        // Placeholder implementation, replace with actual validation logic
+        return true;
+    }
+
+    private void makeMove(String move) {
+        // Placeholder implementation, replace with actual move logic
+        System.out.println("Move made: " + move);
+    }
+
+    private void playTwoPlayersGame() {
+        Scanner scanner = new Scanner(System.in);  // Create a Scanner instance
+        initializeBoard();
+        displayBoard();
+
+        while (true) {
+            System.out.println("Enter move (e.g., e2 e4): ");
+            String move = scanner.nextLine();
+
+            if (isValidMove(move)) {
+                makeMove(move);
+                displayBoard();
+            } else {
+                System.out.println("Invalid move. Try again.");
+            }
+        }
     }
 }
