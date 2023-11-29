@@ -1,7 +1,10 @@
+// Libraries
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.io.File;
 import java.util.Scanner;
 import java.io.IOException;
@@ -29,25 +32,32 @@ public class ChessGame extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
 
+        // Welcome text
         JLabel titleLabel = new JLabel("Welcome to Chess", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
         panel.add(titleLabel, BorderLayout.NORTH);
 
-        
         JPanel buttonPanel = new JPanel(new GridLayout(6, 1));
 
+        // Player and Timer labels
         JLabel players = new JLabel("Number of Players");
         JLabel timer = new JLabel("Duration of the Game");
         players.setFont(new Font("Arial", Font.BOLD, 14));
         timer.setFont(new Font("Arial", Font.BOLD, 14));
 
+        // Player panels and buttons group initalized
         JPanel playerPanel = new JPanel(new GridLayout(1, 2));
         JRadioButton onePlayerButton = new JRadioButton("One Player");
         JRadioButton twoPlayersButton = new JRadioButton("Two Players");
 
-        JButton rulesButton = new JButton("Rules");
-        JButton startGameButton = new JButton("Start");
+        ButtonGroup playerGroup = new ButtonGroup();
+        playerGroup.add(onePlayerButton);
+        playerGroup.add(twoPlayersButton);
 
+        playerPanel.add(onePlayerButton);
+        playerPanel.add(twoPlayersButton);
+
+        // Duration panels and buttons group initalized
         JPanel durationPanel = new JPanel(new GridLayout(1, 5));
         JRadioButton oneMinuteButton = new JRadioButton("1 MIN");
         JRadioButton threeMinuteButton = new JRadioButton("3 MIN");
@@ -55,28 +65,12 @@ public class ChessGame extends JFrame {
         JRadioButton tenMinuteButton = new JRadioButton("10 MIN");
         JRadioButton noTimerButton = new JRadioButton("∞");
 
-        /*
-        onePlayerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleMenuSelection(1);
-            }
-        });
-
-        twoPlayersButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleMenuSelection(2);
-            }
-        });
-        */
-        rulesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showRulesDialog();
-            }
-        });
-        
+        ButtonGroup durationGroup = new ButtonGroup();
+        durationGroup.add(oneMinuteButton);
+        durationGroup.add(threeMinuteButton);
+        durationGroup.add(fiveMinuteButton);
+        durationGroup.add(tenMinuteButton);
+        durationGroup.add(noTimerButton);
 
         durationPanel.add(oneMinuteButton);
         durationPanel.add(threeMinuteButton);
@@ -84,9 +78,11 @@ public class ChessGame extends JFrame {
         durationPanel.add(tenMinuteButton);
         durationPanel.add(noTimerButton);
 
-        playerPanel.add(onePlayerButton);
-        playerPanel.add(twoPlayersButton);
-
+        // Buttons for rules and start initalized
+        JButton rulesButton = new JButton("Rules");
+        JButton startGameButton = new JButton("Start");
+        
+        // Adds the buttons to the panel
         buttonPanel.add(players);
         buttonPanel.add(playerPanel);
         buttonPanel.add(timer);
@@ -94,7 +90,47 @@ public class ChessGame extends JFrame {
         buttonPanel.add(rulesButton);
         buttonPanel.add(startGameButton);
 
+        ItemListener itemListener = new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (onePlayerButton.isSelected() || twoPlayersButton.isSelected()) {
+                    if (oneMinuteButton.isSelected() || threeMinuteButton.isSelected() ||
+                        fiveMinuteButton.isSelected() || tenMinuteButton.isSelected() ||
+                        noTimerButton.isSelected()) {
+                        startGameButton.setEnabled(true);
+                        startGameButton.setBackground(Color.GREEN);
+                    } else {
+                        startGameButton.setEnabled(false);
+                    }
+                } else {
+                    startGameButton.setEnabled(false);
+                }
+            }
+        };
+
+        rulesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showRulesDialog();
+            }
+        });
+        
+        onePlayerButton.addItemListener(itemListener);
+        twoPlayersButton.addItemListener(itemListener);
+        oneMinuteButton.addItemListener(itemListener);
+        threeMinuteButton.addItemListener(itemListener);
+        fiveMinuteButton.addItemListener(itemListener);
+        tenMinuteButton.addItemListener(itemListener);
+        noTimerButton.addItemListener(itemListener);
+
         panel.add(buttonPanel, BorderLayout.CENTER);
+
+        startGameButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleMenuSelection(onePlayerButton.isSelected() ? 1 : 2);
+            }
+        });
 
         return panel;
     }
