@@ -4,16 +4,20 @@ package Project;
  * @author blue
  */
 
- import java.awt.*;
- import java.awt.event.*;
- import javax.swing.*;
- public class Test extends javax.swing.JFrame {
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.border.*;
+
+public class Test extends JFrame {
 
     /**
-     * Creates new form ChessGame
+     * Creates new form Test
      */
     public Test() {
         initComponents();
+        setPreferredSize(new Dimension(500,298));
+        pack();
     }
 
     /**
@@ -24,33 +28,151 @@ package Project;
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
+        GridBagConstraints gridBagConstraints;
 
-        settingsDialog = new javax.swing.JDialog();
-        numPlayersLabel = new javax.swing.JLabel();
-        numPlayersComboBox = new javax.swing.JComboBox<>();
-        gameDurLabel = new javax.swing.JLabel();
-        gameDurComboBox = new javax.swing.JComboBox<>();
-        difficultyLabel = new javax.swing.JLabel();
-        difficultyComboBox = new javax.swing.JComboBox<>();
-        colorLabel = new javax.swing.JLabel();
-        colorComboBox = new javax.swing.JComboBox<>();
-        startGameButton = new javax.swing.JButton();
-        cancelButton = new javax.swing.JButton();
-        gameMenuPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        startNewGameButton = new javax.swing.JButton();
-        rulesButton = new javax.swing.JButton();
-        loadGameButton = new javax.swing.JButton();
-        gameBoardPanel = new javax.swing.JPanel();
+        settingsDialog = new JDialog();
+        numPlayersLabel = new JLabel();
+        numPlayersComboBox = new JComboBox<>();
+        gameDurLabel = new JLabel();
+        gameDurComboBox = new JComboBox<>();
+        difficultyLabel = new JLabel();
+        difficultyComboBox = new JComboBox<>();
+        colorLabel = new JLabel();
+        colorComboBox = new JComboBox<>();
+        startGameButton = new JButton();
+        cancelButton = new JButton();
+        gameMenuPanel = new JPanel();
+        jLabel1 = new JLabel();
+        startNewGameButton = new JButton();
+        rulesButton = new JButton();
+        loadGameButton = new JButton();
+        jPanel1 = new JPanel();
+        gameBoardPanel = new JPanel();
+        a8Label = new JLabel();
+        b8Label = new JLabel();
+        c8Label = new JLabel();
+        d8Label = new JLabel();
+        e8Label = new JLabel();
+        f8Label = new JLabel();
+        g8Label = new JLabel();
+        h8Label = new JLabel();
+        a7Label = new JLabel();
+        b7Label = new JLabel();
+        c7Label = new JLabel();
+        d7Label = new JLabel();
+        e7Label = new JLabel();
+        f7Label = new JLabel();
+        g7Label = new JLabel();
+        h7Label = new JLabel();
+        a6Label = new JLabel();
+        b6Label = new JLabel();
+        c6Label = new JLabel();
+        d6Label = new JLabel();
+        e6Label = new JLabel();
+        f6Label = new JLabel();
+        g6Label = new JLabel();
+        h6Label = new JLabel();
+        a5Label = new JLabel();
+        b5Label = new JLabel();
+        c5Label = new JLabel();
+        d5Label = new JLabel();
+        e5Label = new JLabel();
+        f5Label = new JLabel();
+        g5Label = new JLabel();
+        h5Label = new JLabel();
+        a4Label = new JLabel();
+        b4Label = new JLabel();
+        c4Label = new JLabel();
+        d4Label = new JLabel();
+        e4Label = new JLabel();
+        f4Label = new JLabel();
+        g4Label = new JLabel();
+        h4Label = new JLabel();
+        a3Label = new JLabel();
+        b3Label = new JLabel();
+        c3Label = new JLabel();
+        d3Label = new JLabel();
+        e3Label = new JLabel();
+        f3Label = new JLabel();
+        g3Label = new JLabel();
+        h3Label = new JLabel();
+        a2Label = new JLabel();
+        b2Label = new JLabel();
+        c2Label = new JLabel();
+        d2Label = new JLabel();
+        e2Label = new JLabel();
+        f2Label = new JLabel();
+        g2Label = new JLabel();
+        h2Label = new JLabel();
+        a1Label = new JLabel();
+        b1Label = new JLabel();
+        c1Label = new JLabel();
+        d1Label = new JLabel();
+        e1Label = new JLabel();
+        f1Label = new JLabel();
+        g1Label = new JLabel();
+        h1Label = new JLabel();
+        jPanel4 = new JPanel();
+        eightLabel = new JLabel();
+        sevenLabel = new JLabel();
+        sixLabel = new JLabel();
+        fiveLabel = new JLabel();
+        fourLabel = new JLabel();
+        threeLabel = new JLabel();
+        twoLabel = new JLabel();
+        oneLabel = new JLabel();
+        jPanel5 = new JPanel();
+        aLabel = new JLabel();
+        bLabel = new JLabel();
+        cLabel = new JLabel();
+        dLabel = new JLabel();
+        eLabel = new JLabel();
+        fLabel = new JLabel();
+        gLabel = new JLabel();
+        hLabel = new JLabel();
+        jPanel6 = new JPanel();
+        eightLabel2 = new JLabel();
+        sevenLabel2 = new JLabel();
+        sixLabel2 = new JLabel();
+        fiveLabel2 = new JLabel();
+        fourLabel2 = new JLabel();
+        threeLabel2 = new JLabel();
+        twoLabel2 = new JLabel();
+        oneLabel2 = new JLabel();
+        jPanel7 = new JPanel();
+        aLabel2 = new JLabel();
+        bLabel2 = new JLabel();
+        cLabel2 = new JLabel();
+        dLabel2 = new JLabel();
+        eLabel2 = new JLabel();
+        fLabel2 = new JLabel();
+        gLabel2 = new JLabel();
+        hLabel2 = new JLabel();
+        jMenuBar1 = new JMenuBar();
+        chessGameMenu = new JMenu();
+        aboutMenuItem = new JMenuItem();
+        quitMenuItem = new JMenuItem();
+        fileMenu = new JMenu();
+        newGameMenuItem = new JMenuItem();
+        loadGameMenuItem = new JMenuItem();
+        saveGameMenuItem = new JMenuItem();
+        viewMenu = new JMenu();
+        fullScreenMenuItem = new JMenuItem();
+        actualSizeMenuItem = new JMenuItem();
+        zoomInMenuItem = new JMenuItem();
+        zoomOutMenuItem = new JMenuItem();
+        helpMenu = new JMenu();
+        rulesMenuItem = new JMenuItem();
 
-        settingsDialog.setMinimumSize(new java.awt.Dimension(242, 189));
+        settingsDialog.setMinimumSize(new Dimension(242, 213));
+        settingsDialog.setResizable(false);
 
         numPlayersLabel.setText("Number of Players:");
 
         numPlayersComboBox.setMaximumRowCount(2);
-        numPlayersComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
-        numPlayersComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        numPlayersComboBox.setModel(new DefaultComboBoxModel<>(new String[] { "1", "2" }));
+        numPlayersComboBox.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 numPlayersComboBoxActionPerformed(evt);
             }
         });
@@ -58,182 +180,875 @@ package Project;
         gameDurLabel.setText("Duration of Game:");
 
         gameDurComboBox.setMaximumRowCount(4);
-        gameDurComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 MIN", "3 MIN", "5 MIN", "∞" }));
+        gameDurComboBox.setModel(new DefaultComboBoxModel<>(new String[] { "1 MIN", "3 MIN", "5 MIN", "∞" }));
 
         difficultyLabel.setText("Game Difficulty:");
 
         difficultyComboBox.setMaximumRowCount(3);
-        difficultyComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Easy", "Medium", "Hard" }));
+        difficultyComboBox.setModel(new DefaultComboBoxModel<>(new String[] { "Easy", "Medium", "Hard" }));
         difficultyComboBox.setSelectedIndex(1);
         difficultyComboBox.setToolTipText("");
 
         colorLabel.setText("Color:");
 
         colorComboBox.setMaximumRowCount(2);
-        colorComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Light", "Dark" }));
+        colorComboBox.setModel(new DefaultComboBoxModel<>(new String[] { "Light", "Dark" }));
 
         startGameButton.setText("Start");
         startGameButton.setToolTipText("");
-        startGameButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        startGameButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 startGameButtonActionPerformed(evt);
             }
         });
 
         cancelButton.setText("Cancel");
-        cancelButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        cancelButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout settingsDialogLayout = new javax.swing.GroupLayout(settingsDialog.getContentPane());
+        GroupLayout settingsDialogLayout = new GroupLayout(settingsDialog.getContentPane());
         settingsDialog.getContentPane().setLayout(settingsDialogLayout);
         settingsDialogLayout.setHorizontalGroup(
-            settingsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            settingsDialogLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(settingsDialogLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(settingsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(startGameButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(colorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(difficultyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(gameDurLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(numPlayersLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(settingsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(settingsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(numPlayersComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(gameDurComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cancelButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(settingsDialogLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(startGameButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(colorLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(difficultyLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(gameDurLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(numPlayersLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(settingsDialogLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addGroup(settingsDialogLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                        .addComponent(numPlayersComboBox, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(gameDurComboBox, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cancelButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(difficultyComboBox, 0, 112, Short.MAX_VALUE))
-                    .addComponent(colorComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(colorComboBox, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         settingsDialogLayout.setVerticalGroup(
-            settingsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            settingsDialogLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(settingsDialogLayout.createSequentialGroup()
                 .addContainerGap(24, Short.MAX_VALUE)
-                .addGroup(settingsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(numPlayersComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(settingsDialogLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(numPlayersComboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     .addComponent(numPlayersLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(settingsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(gameDurComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(settingsDialogLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(gameDurComboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     .addComponent(gameDurLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(settingsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(difficultyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(settingsDialogLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(difficultyComboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     .addComponent(difficultyLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(settingsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(colorComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(settingsDialogLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(colorComboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     .addComponent(colorLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(settingsDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(settingsDialogLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelButton)
                     .addComponent(startGameButton))
                 .addContainerGap())
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Chess Game");
-        setMinimumSize(new java.awt.Dimension(500, 250));
-        getContentPane().setLayout(new java.awt.CardLayout());
+        setResizable(false);
+        getContentPane().setLayout(new CardLayout());
 
-        gameMenuPanel.setBackground(new java.awt.Color(81, 38, 14));
-        gameMenuPanel.setMaximumSize(new java.awt.Dimension(500, 250));
-        gameMenuPanel.setMinimumSize(new java.awt.Dimension(500, 250));
-        gameMenuPanel.setPreferredSize(new java.awt.Dimension(500, 250));
+        gameMenuPanel.setBackground(new Color(81, 38, 14));
+        gameMenuPanel.setMaximumSize(new Dimension(500, 250));
+        gameMenuPanel.setMinimumSize(new Dimension(500, 250));
+        gameMenuPanel.setPreferredSize(new Dimension(500, 250));
+        gameMenuPanel.setSize(new Dimension(500, 250));
 
-        jLabel1.setFont(new java.awt.Font("Luminari", 1, 75)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setBackground(new Color(81, 38, 14));
+        jLabel1.setFont(new Font("Luminari", 1, 75)); // NOI18N
+        jLabel1.setHorizontalAlignment(SwingConstants.CENTER);
         jLabel1.setText("Chess");
-        jLabel1.setMinimumSize(new java.awt.Dimension(500, 250));
+        jLabel1.setMaximumSize(null);
+        jLabel1.setMinimumSize(null);
 
-        startNewGameButton.setBackground(new java.awt.Color(244, 222, 203));
-        startNewGameButton.setForeground(new java.awt.Color(0, 0, 0));
+        startNewGameButton.setBackground(new Color(244, 222, 203));
+        startNewGameButton.setForeground(new Color(0, 0, 0));
         startNewGameButton.setText("Start New Game");
-        startNewGameButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        startNewGameButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 startNewGameButtonActionPerformed(evt);
             }
         });
 
-        rulesButton.setBackground(new java.awt.Color(244, 222, 203));
-        rulesButton.setForeground(new java.awt.Color(0, 0, 0));
+        rulesButton.setBackground(new Color(244, 222, 203));
+        rulesButton.setForeground(new Color(0, 0, 0));
         rulesButton.setText("Rules");
-        rulesButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        rulesButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 rulesButtonActionPerformed(evt);
             }
         });
 
-        loadGameButton.setBackground(new java.awt.Color(244, 222, 203));
-        loadGameButton.setForeground(new java.awt.Color(0, 0, 0));
+        loadGameButton.setBackground(new Color(244, 222, 203));
+        loadGameButton.setForeground(new Color(0, 0, 0));
         loadGameButton.setText("Load Game");
-        loadGameButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        loadGameButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 loadGameButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout gameMenuPanelLayout = new javax.swing.GroupLayout(gameMenuPanel);
+        GroupLayout gameMenuPanelLayout = new GroupLayout(gameMenuPanel);
         gameMenuPanel.setLayout(gameMenuPanelLayout);
         gameMenuPanelLayout.setHorizontalGroup(
-            gameMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            gameMenuPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(gameMenuPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(gameMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(startNewGameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, gameMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(rulesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(loadGameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addGroup(gameMenuPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)
+                    .addGroup(GroupLayout.Alignment.LEADING, gameMenuPanelLayout.createSequentialGroup()
+                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(gameMenuPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                            .addComponent(loadGameButton, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rulesButton, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(startNewGameButton, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE))))
+                .addGap(250, 250, 250))
         );
         gameMenuPanelLayout.setVerticalGroup(
-            gameMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            gameMenuPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(gameMenuPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(startNewGameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(startNewGameButton, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loadGameButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rulesButton)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(380, Short.MAX_VALUE))
         );
 
         getContentPane().add(gameMenuPanel, "card2");
 
-        gameBoardPanel.setBackground(new java.awt.Color(196, 164, 132));
+        jPanel1.setBackground(new Color(81, 38, 14));
+        jPanel1.setMinimumSize(new Dimension(500, 500));
+        jPanel1.setPreferredSize(new Dimension(500, 500));
+        jPanel1.setLayout(new GridBagLayout());
+
+        gameBoardPanel.setBackground(new Color(196, 164, 132));
         gameBoardPanel.setToolTipText("");
-        gameBoardPanel.setMaximumSize(new java.awt.Dimension(800, 800));
-        gameBoardPanel.setMinimumSize(new java.awt.Dimension(400, 400));
-        gameBoardPanel.setPreferredSize(new java.awt.Dimension(800, 800));
+        gameBoardPanel.setMaximumSize(new Dimension(800, 800));
+        gameBoardPanel.setMinimumSize(new Dimension(400, 400));
+        gameBoardPanel.setPreferredSize(new Dimension(400, 400));
+        gameBoardPanel.setLayout(new GridLayout(8, 8));
 
-        javax.swing.GroupLayout gameBoardPanelLayout = new javax.swing.GroupLayout(gameBoardPanel);
-        gameBoardPanel.setLayout(gameBoardPanelLayout);
-        gameBoardPanelLayout.setHorizontalGroup(
-            gameBoardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        gameBoardPanelLayout.setVerticalGroup(
-            gameBoardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
+        a8Label.setHorizontalAlignment(SwingConstants.CENTER);
+        a8Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        a8Label.setBorder(new MatteBorder(null));
+        gameBoardPanel.add(a8Label);
 
-        getContentPane().add(gameBoardPanel, "card3");
+        b8Label.setHorizontalAlignment(SwingConstants.CENTER);
+        b8Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        b8Label.setToolTipText("");
+        gameBoardPanel.add(b8Label);
+
+        c8Label.setHorizontalAlignment(SwingConstants.CENTER);
+        c8Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        c8Label.setText("jLabel2");
+        gameBoardPanel.add(c8Label);
+
+        d8Label.setHorizontalAlignment(SwingConstants.CENTER);
+        d8Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        d8Label.setText("jLabel2");
+        gameBoardPanel.add(d8Label);
+
+        e8Label.setHorizontalAlignment(SwingConstants.CENTER);
+        e8Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        e8Label.setText("jLabel2");
+        gameBoardPanel.add(e8Label);
+
+        f8Label.setHorizontalAlignment(SwingConstants.CENTER);
+        f8Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        f8Label.setToolTipText("");
+        gameBoardPanel.add(f8Label);
+
+        g8Label.setHorizontalAlignment(SwingConstants.CENTER);
+        g8Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        g8Label.setToolTipText("");
+        gameBoardPanel.add(g8Label);
+
+        h8Label.setHorizontalAlignment(SwingConstants.CENTER);
+        h8Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        h8Label.setToolTipText("");
+        gameBoardPanel.add(h8Label);
+
+        a7Label.setHorizontalAlignment(SwingConstants.CENTER);
+        a7Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/With Shadow/128px/square brown dark_png_shadow_128px.png"))); // NOI18N
+        gameBoardPanel.add(a7Label);
+
+        b7Label.setHorizontalAlignment(SwingConstants.CENTER);
+        b7Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        b7Label.setText("jLabel2");
+        gameBoardPanel.add(b7Label);
+
+        c7Label.setHorizontalAlignment(SwingConstants.CENTER);
+        c7Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        c7Label.setToolTipText("");
+        gameBoardPanel.add(c7Label);
+
+        d7Label.setHorizontalAlignment(SwingConstants.CENTER);
+        d7Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        d7Label.setText("jLabel2");
+        gameBoardPanel.add(d7Label);
+
+        e7Label.setHorizontalAlignment(SwingConstants.CENTER);
+        e7Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        e7Label.setToolTipText("");
+        gameBoardPanel.add(e7Label);
+
+        f7Label.setHorizontalAlignment(SwingConstants.CENTER);
+        f7Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        f7Label.setToolTipText("");
+        gameBoardPanel.add(f7Label);
+
+        g7Label.setHorizontalAlignment(SwingConstants.CENTER);
+        g7Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        g7Label.setToolTipText("");
+        gameBoardPanel.add(g7Label);
+
+        h7Label.setHorizontalAlignment(SwingConstants.CENTER);
+        h7Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        h7Label.setToolTipText("");
+        gameBoardPanel.add(h7Label);
+
+        a6Label.setHorizontalAlignment(SwingConstants.CENTER);
+        a6Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        a6Label.setToolTipText("");
+        gameBoardPanel.add(a6Label);
+
+        b6Label.setHorizontalAlignment(SwingConstants.CENTER);
+        b6Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        b6Label.setToolTipText("");
+        gameBoardPanel.add(b6Label);
+
+        c6Label.setHorizontalAlignment(SwingConstants.CENTER);
+        c6Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        c6Label.setText("jLabel2");
+        gameBoardPanel.add(c6Label);
+
+        d6Label.setHorizontalAlignment(SwingConstants.CENTER);
+        d6Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        d6Label.setText("jLabel2");
+        gameBoardPanel.add(d6Label);
+
+        e6Label.setHorizontalAlignment(SwingConstants.CENTER);
+        e6Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        e6Label.setText("jLabel2");
+        gameBoardPanel.add(e6Label);
+
+        f6Label.setHorizontalAlignment(SwingConstants.CENTER);
+        f6Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        f6Label.setText("jLabel2");
+        gameBoardPanel.add(f6Label);
+
+        g6Label.setHorizontalAlignment(SwingConstants.CENTER);
+        g6Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        g6Label.setToolTipText("");
+        gameBoardPanel.add(g6Label);
+
+        h6Label.setHorizontalAlignment(SwingConstants.CENTER);
+        h6Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        h6Label.setToolTipText("");
+        gameBoardPanel.add(h6Label);
+
+        a5Label.setHorizontalAlignment(SwingConstants.CENTER);
+        a5Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        a5Label.setText("jLabel2");
+        gameBoardPanel.add(a5Label);
+
+        b5Label.setHorizontalAlignment(SwingConstants.CENTER);
+        b5Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        b5Label.setText("jLabel2");
+        gameBoardPanel.add(b5Label);
+
+        c5Label.setHorizontalAlignment(SwingConstants.CENTER);
+        c5Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        c5Label.setText("jLabel2");
+        gameBoardPanel.add(c5Label);
+
+        d5Label.setHorizontalAlignment(SwingConstants.CENTER);
+        d5Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        d5Label.setToolTipText("");
+        gameBoardPanel.add(d5Label);
+
+        e5Label.setHorizontalAlignment(SwingConstants.CENTER);
+        e5Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        e5Label.setToolTipText("");
+        gameBoardPanel.add(e5Label);
+
+        f5Label.setHorizontalAlignment(SwingConstants.CENTER);
+        f5Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        f5Label.setToolTipText("");
+        gameBoardPanel.add(f5Label);
+
+        g5Label.setHorizontalAlignment(SwingConstants.CENTER);
+        g5Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        g5Label.setToolTipText("");
+        gameBoardPanel.add(g5Label);
+
+        h5Label.setHorizontalAlignment(SwingConstants.CENTER);
+        h5Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        h5Label.setText("jLabel2");
+        gameBoardPanel.add(h5Label);
+
+        a4Label.setHorizontalAlignment(SwingConstants.CENTER);
+        a4Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        a4Label.setText("jLabel2");
+        gameBoardPanel.add(a4Label);
+
+        b4Label.setHorizontalAlignment(SwingConstants.CENTER);
+        b4Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        b4Label.setText("jLabel2");
+        gameBoardPanel.add(b4Label);
+
+        c4Label.setHorizontalAlignment(SwingConstants.CENTER);
+        c4Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        c4Label.setText("jLabel2");
+        gameBoardPanel.add(c4Label);
+
+        d4Label.setHorizontalAlignment(SwingConstants.CENTER);
+        d4Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        d4Label.setText("jLabel2");
+        gameBoardPanel.add(d4Label);
+
+        e4Label.setHorizontalAlignment(SwingConstants.CENTER);
+        e4Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        e4Label.setToolTipText("");
+        gameBoardPanel.add(e4Label);
+
+        f4Label.setHorizontalAlignment(SwingConstants.CENTER);
+        f4Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        f4Label.setToolTipText("");
+        gameBoardPanel.add(f4Label);
+
+        g4Label.setHorizontalAlignment(SwingConstants.CENTER);
+        g4Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        g4Label.setText("jLabel2");
+        gameBoardPanel.add(g4Label);
+
+        h4Label.setHorizontalAlignment(SwingConstants.CENTER);
+        h4Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        h4Label.setToolTipText("");
+        gameBoardPanel.add(h4Label);
+
+        a3Label.setHorizontalAlignment(SwingConstants.CENTER);
+        a3Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        a3Label.setToolTipText("");
+        gameBoardPanel.add(a3Label);
+
+        b3Label.setHorizontalAlignment(SwingConstants.CENTER);
+        b3Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        b3Label.setText("jLabel2");
+        gameBoardPanel.add(b3Label);
+
+        c3Label.setHorizontalAlignment(SwingConstants.CENTER);
+        c3Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        c3Label.setText("jLabel2");
+        gameBoardPanel.add(c3Label);
+
+        d3Label.setHorizontalAlignment(SwingConstants.CENTER);
+        d3Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        d3Label.setToolTipText("");
+        gameBoardPanel.add(d3Label);
+
+        e3Label.setHorizontalAlignment(SwingConstants.CENTER);
+        e3Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        e3Label.setToolTipText("");
+        gameBoardPanel.add(e3Label);
+
+        f3Label.setHorizontalAlignment(SwingConstants.CENTER);
+        f3Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        f3Label.setToolTipText("");
+        gameBoardPanel.add(f3Label);
+
+        g3Label.setHorizontalAlignment(SwingConstants.CENTER);
+        g3Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        g3Label.setText("jLabel2");
+        gameBoardPanel.add(g3Label);
+
+        h3Label.setHorizontalAlignment(SwingConstants.CENTER);
+        h3Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        h3Label.setText("jLabel2");
+        gameBoardPanel.add(h3Label);
+
+        a2Label.setHorizontalAlignment(SwingConstants.CENTER);
+        a2Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        a2Label.setText("jLabel2");
+        gameBoardPanel.add(a2Label);
+
+        b2Label.setHorizontalAlignment(SwingConstants.CENTER);
+        b2Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        b2Label.setText("jLabel2");
+        gameBoardPanel.add(b2Label);
+
+        c2Label.setHorizontalAlignment(SwingConstants.CENTER);
+        c2Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        c2Label.setText("jLabel2");
+        gameBoardPanel.add(c2Label);
+
+        d2Label.setHorizontalAlignment(SwingConstants.CENTER);
+        d2Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        d2Label.setText("jLabel2");
+        gameBoardPanel.add(d2Label);
+
+        e2Label.setHorizontalAlignment(SwingConstants.CENTER);
+        e2Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        e2Label.setText("jLabel2");
+        gameBoardPanel.add(e2Label);
+
+        f2Label.setHorizontalAlignment(SwingConstants.CENTER);
+        f2Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        f2Label.setToolTipText("");
+        gameBoardPanel.add(f2Label);
+
+        g2Label.setHorizontalAlignment(SwingConstants.CENTER);
+        g2Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        g2Label.setToolTipText("");
+        gameBoardPanel.add(g2Label);
+
+        h2Label.setHorizontalAlignment(SwingConstants.CENTER);
+        h2Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        h2Label.setToolTipText("");
+        gameBoardPanel.add(h2Label);
+
+        a1Label.setHorizontalAlignment(SwingConstants.CENTER);
+        a1Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        a1Label.setToolTipText("");
+        gameBoardPanel.add(a1Label);
+
+        b1Label.setHorizontalAlignment(SwingConstants.CENTER);
+        b1Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        b1Label.setText("jLabel2");
+        gameBoardPanel.add(b1Label);
+
+        c1Label.setHorizontalAlignment(SwingConstants.CENTER);
+        c1Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        c1Label.setToolTipText("");
+        gameBoardPanel.add(c1Label);
+
+        d1Label.setHorizontalAlignment(SwingConstants.CENTER);
+        d1Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        d1Label.setToolTipText("");
+        gameBoardPanel.add(d1Label);
+
+        e1Label.setHorizontalAlignment(SwingConstants.CENTER);
+        e1Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        e1Label.setToolTipText("");
+        gameBoardPanel.add(e1Label);
+
+        f1Label.setHorizontalAlignment(SwingConstants.CENTER);
+        f1Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        f1Label.setToolTipText("");
+        gameBoardPanel.add(f1Label);
+
+        g1Label.setHorizontalAlignment(SwingConstants.CENTER);
+        g1Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
+        g1Label.setText("jLabel2");
+        gameBoardPanel.add(g1Label);
+
+        h1Label.setHorizontalAlignment(SwingConstants.CENTER);
+        h1Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown light_1x_ns.png"))); // NOI18N
+        h1Label.setText("jLabel2");
+        gameBoardPanel.add(h1Label);
+
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        jPanel1.add(gameBoardPanel, gridBagConstraints);
+
+        jPanel4.setBackground(new Color(81, 38, 14));
+        jPanel4.setPreferredSize(new Dimension(50, 400));
+        jPanel4.setLayout(new GridLayout(8, 1));
+
+        eightLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        eightLabel.setForeground(new Color(0, 0, 0));
+        eightLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        eightLabel.setText("8");
+        eightLabel.setMaximumSize(new Dimension(100, 100));
+        eightLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel4.add(eightLabel);
+
+        sevenLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        sevenLabel.setForeground(new Color(0, 0, 0));
+        sevenLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        sevenLabel.setText("7");
+        sevenLabel.setMaximumSize(new Dimension(100, 100));
+        sevenLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel4.add(sevenLabel);
+
+        sixLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        sixLabel.setForeground(new Color(0, 0, 0));
+        sixLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        sixLabel.setText("6");
+        sixLabel.setMaximumSize(new Dimension(100, 100));
+        sixLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel4.add(sixLabel);
+
+        fiveLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        fiveLabel.setForeground(new Color(0, 0, 0));
+        fiveLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        fiveLabel.setText("5");
+        fiveLabel.setMaximumSize(new Dimension(100, 100));
+        fiveLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel4.add(fiveLabel);
+
+        fourLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        fourLabel.setForeground(new Color(0, 0, 0));
+        fourLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        fourLabel.setText("4");
+        fourLabel.setMaximumSize(new Dimension(100, 100));
+        fourLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel4.add(fourLabel);
+
+        threeLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        threeLabel.setForeground(new Color(0, 0, 0));
+        threeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        threeLabel.setText("3");
+        threeLabel.setMaximumSize(new Dimension(100, 100));
+        threeLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel4.add(threeLabel);
+
+        twoLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        twoLabel.setForeground(new Color(0, 0, 0));
+        twoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        twoLabel.setText("2");
+        twoLabel.setMaximumSize(new Dimension(100, 100));
+        twoLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel4.add(twoLabel);
+
+        oneLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        oneLabel.setForeground(new Color(0, 0, 0));
+        oneLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        oneLabel.setText("1");
+        jPanel4.add(oneLabel);
+
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        jPanel1.add(jPanel4, gridBagConstraints);
+
+        jPanel5.setBackground(new Color(81, 38, 14));
+        jPanel5.setMinimumSize(new Dimension(400, 50));
+        jPanel5.setPreferredSize(new Dimension(400, 50));
+        jPanel5.setLayout(new GridLayout(1, 8));
+
+        aLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        aLabel.setForeground(new Color(0, 0, 0));
+        aLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        aLabel.setText("A");
+        aLabel.setMaximumSize(new Dimension(100, 100));
+        aLabel.setMinimumSize(new Dimension(50, 50));
+        aLabel.setPreferredSize(null);
+        jPanel5.add(aLabel);
+
+        bLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        bLabel.setForeground(new Color(0, 0, 0));
+        bLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        bLabel.setText("B");
+        bLabel.setMaximumSize(new Dimension(100, 100));
+        bLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel5.add(bLabel);
+
+        cLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        cLabel.setForeground(new Color(0, 0, 0));
+        cLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        cLabel.setText("C");
+        cLabel.setMaximumSize(new Dimension(100, 100));
+        cLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel5.add(cLabel);
+
+        dLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        dLabel.setForeground(new Color(0, 0, 0));
+        dLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        dLabel.setText("D");
+        dLabel.setMaximumSize(new Dimension(100, 100));
+        dLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel5.add(dLabel);
+
+        eLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        eLabel.setForeground(new Color(0, 0, 0));
+        eLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        eLabel.setText("E");
+        eLabel.setMaximumSize(new Dimension(100, 100));
+        eLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel5.add(eLabel);
+
+        fLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        fLabel.setForeground(new Color(0, 0, 0));
+        fLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        fLabel.setText("F");
+        fLabel.setMaximumSize(new Dimension(100, 100));
+        fLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel5.add(fLabel);
+
+        gLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        gLabel.setForeground(new Color(0, 0, 0));
+        gLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        gLabel.setText("G");
+        gLabel.setMaximumSize(new Dimension(100, 100));
+        gLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel5.add(gLabel);
+
+        hLabel.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        hLabel.setForeground(new Color(0, 0, 0));
+        hLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        hLabel.setText("H");
+        hLabel.setMaximumSize(new Dimension(100, 100));
+        hLabel.setMinimumSize(new Dimension(50, 50));
+        jPanel5.add(hLabel);
+
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        jPanel1.add(jPanel5, gridBagConstraints);
+
+        jPanel6.setBackground(new Color(81, 38, 14));
+        jPanel6.setPreferredSize(new Dimension(50, 400));
+        jPanel6.setLayout(new GridLayout(8, 0));
+
+        eightLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        eightLabel2.setForeground(new Color(0, 0, 0));
+        eightLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        eightLabel2.setText("8");
+        eightLabel2.setMaximumSize(new Dimension(100, 100));
+        eightLabel2.setMinimumSize(new Dimension(50, 50));
+        eightLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel6.add(eightLabel2);
+
+        sevenLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        sevenLabel2.setForeground(new Color(0, 0, 0));
+        sevenLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        sevenLabel2.setText("7");
+        sevenLabel2.setMaximumSize(new Dimension(100, 100));
+        sevenLabel2.setMinimumSize(new Dimension(50, 50));
+        sevenLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel6.add(sevenLabel2);
+
+        sixLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        sixLabel2.setForeground(new Color(0, 0, 0));
+        sixLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        sixLabel2.setText("6");
+        sixLabel2.setMaximumSize(new Dimension(100, 100));
+        sixLabel2.setMinimumSize(new Dimension(50, 50));
+        sixLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel6.add(sixLabel2);
+
+        fiveLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        fiveLabel2.setForeground(new Color(0, 0, 0));
+        fiveLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        fiveLabel2.setText("5");
+        fiveLabel2.setMaximumSize(new Dimension(100, 100));
+        fiveLabel2.setMinimumSize(new Dimension(50, 50));
+        fiveLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel6.add(fiveLabel2);
+
+        fourLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        fourLabel2.setForeground(new Color(0, 0, 0));
+        fourLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        fourLabel2.setText("4");
+        fourLabel2.setMaximumSize(new Dimension(100, 100));
+        fourLabel2.setMinimumSize(new Dimension(50, 50));
+        fourLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel6.add(fourLabel2);
+
+        threeLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        threeLabel2.setForeground(new Color(0, 0, 0));
+        threeLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        threeLabel2.setText("3");
+        threeLabel2.setMaximumSize(new Dimension(100, 100));
+        threeLabel2.setMinimumSize(new Dimension(50, 50));
+        threeLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel6.add(threeLabel2);
+
+        twoLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        twoLabel2.setForeground(new Color(0, 0, 0));
+        twoLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        twoLabel2.setText("2");
+        twoLabel2.setMaximumSize(new Dimension(100, 100));
+        twoLabel2.setMinimumSize(new Dimension(50, 50));
+        twoLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel6.add(twoLabel2);
+
+        oneLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        oneLabel2.setForeground(new Color(0, 0, 0));
+        oneLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        oneLabel2.setText("1");
+        oneLabel2.setMaximumSize(new Dimension(100, 100));
+        oneLabel2.setMinimumSize(new Dimension(50, 50));
+        oneLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel6.add(oneLabel2);
+
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        jPanel1.add(jPanel6, gridBagConstraints);
+
+        jPanel7.setBackground(new Color(81, 38, 14));
+        jPanel7.setPreferredSize(new Dimension(400, 50));
+        jPanel7.setLayout(new GridLayout(1, 8));
+
+        aLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        aLabel2.setForeground(new Color(0, 0, 0));
+        aLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        aLabel2.setText("A");
+        aLabel2.setMaximumSize(new Dimension(100, 100));
+        aLabel2.setMinimumSize(new Dimension(50, 50));
+        aLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel7.add(aLabel2);
+
+        bLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        bLabel2.setForeground(new Color(0, 0, 0));
+        bLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        bLabel2.setText("B");
+        bLabel2.setMaximumSize(new Dimension(100, 100));
+        bLabel2.setMinimumSize(new Dimension(50, 50));
+        bLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel7.add(bLabel2);
+
+        cLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        cLabel2.setForeground(new Color(0, 0, 0));
+        cLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        cLabel2.setText("C");
+        cLabel2.setMaximumSize(new Dimension(100, 100));
+        cLabel2.setMinimumSize(new Dimension(50, 50));
+        cLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel7.add(cLabel2);
+
+        dLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        dLabel2.setForeground(new Color(0, 0, 0));
+        dLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        dLabel2.setText("D");
+        dLabel2.setMaximumSize(new Dimension(100, 100));
+        dLabel2.setMinimumSize(new Dimension(50, 50));
+        dLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel7.add(dLabel2);
+
+        eLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        eLabel2.setForeground(new Color(0, 0, 0));
+        eLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        eLabel2.setText("E");
+        eLabel2.setMaximumSize(new Dimension(100, 100));
+        eLabel2.setMinimumSize(new Dimension(50, 50));
+        eLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel7.add(eLabel2);
+
+        fLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        fLabel2.setForeground(new Color(0, 0, 0));
+        fLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        fLabel2.setText("F");
+        fLabel2.setMaximumSize(new Dimension(100, 100));
+        fLabel2.setMinimumSize(new Dimension(50, 50));
+        fLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel7.add(fLabel2);
+
+        gLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        gLabel2.setForeground(new Color(0, 0, 0));
+        gLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        gLabel2.setText("G");
+        gLabel2.setMaximumSize(new Dimension(100, 100));
+        gLabel2.setMinimumSize(new Dimension(50, 50));
+        gLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel7.add(gLabel2);
+
+        hLabel2.setFont(new Font("Helvetica Neue", 0, 24)); // NOI18N
+        hLabel2.setForeground(new Color(0, 0, 0));
+        hLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+        hLabel2.setText("H");
+        hLabel2.setMaximumSize(new Dimension(100, 100));
+        hLabel2.setMinimumSize(new Dimension(50, 50));
+        hLabel2.setPreferredSize(new Dimension(50, 50));
+        jPanel7.add(hLabel2);
+
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        jPanel1.add(jPanel7, gridBagConstraints);
+
+        getContentPane().add(jPanel1, "card3");
+
+        chessGameMenu.setText("ChessGame");
+
+        aboutMenuItem.setText("About ChessGame");
+        aboutMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                aboutMenuItemActionPerformed(evt);
+            }
+        });
+        chessGameMenu.add(aboutMenuItem);
+
+        quitMenuItem.setText("Quit ChessGame");
+        quitMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                quitMenuItemActionPerformed(evt);
+            }
+        });
+        chessGameMenu.add(quitMenuItem);
+
+        jMenuBar1.add(chessGameMenu);
+
+        fileMenu.setText("File");
+
+        newGameMenuItem.setText("New Game");
+        fileMenu.add(newGameMenuItem);
+
+        loadGameMenuItem.setText("Load Game");
+        fileMenu.add(loadGameMenuItem);
+
+        saveGameMenuItem.setText("Save Game");
+        fileMenu.add(saveGameMenuItem);
+
+        jMenuBar1.add(fileMenu);
+
+        viewMenu.setText("View");
+
+        fullScreenMenuItem.setText("Enter Full-Screen");
+        fullScreenMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                fullScreenMenuItemActionPerformed(evt);
+            }
+        });
+        viewMenu.add(fullScreenMenuItem);
+
+        actualSizeMenuItem.setText("Actual Size");
+        viewMenu.add(actualSizeMenuItem);
+
+        zoomInMenuItem.setText("Zoom In");
+        viewMenu.add(zoomInMenuItem);
+
+        zoomOutMenuItem.setText("Zoom Out");
+        viewMenu.add(zoomOutMenuItem);
+
+        jMenuBar1.add(viewMenu);
+
+        helpMenu.setText("Help");
+
+        rulesMenuItem.setText("Rules");
+        helpMenu.add(rulesMenuItem);
+
+        jMenuBar1.add(helpMenu);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>                        
 
-    private void numPlayersComboBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+    private void numPlayersComboBoxActionPerformed(ActionEvent evt) {                                                   
         // TODO add your handling code here:
     }                                                  
 
-    private void startNewGameButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+    private void startNewGameButtonActionPerformed(ActionEvent evt) {                                                   
         // Get the location of the "Start New Game" button
         int x = startNewGameButton.getLocationOnScreen().x;
         int y = startNewGameButton.getLocationOnScreen().y;
@@ -245,32 +1060,45 @@ package Project;
         settingsDialog.setVisible(true);
     }                                                  
 
-    private void loadGameButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    private void loadGameButtonActionPerformed(ActionEvent evt) {                                               
         // TODO add your handling code here:
     }                                              
 
-    private void rulesButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void rulesButtonActionPerformed(ActionEvent evt) {                                            
         // TODO add your handling code here:
     }                                           
 
-    private void startGameButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    private void startGameButtonActionPerformed(ActionEvent evt) {                                                
         settingsDialog.setVisible(false);
         // Switch to the third card (gameBoardPanel)
-        java.awt.CardLayout cardLayout = (java.awt.CardLayout) getContentPane().getLayout();
-        this.setSize(800,800);
+        CardLayout cardLayout = (CardLayout) getContentPane().getLayout();
+        setPreferredSize(new Dimension(500,548));
         cardLayout.show(getContentPane(), "card3");
+        pack();
     }                                               
 
-    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
+    private void cancelButtonActionPerformed(ActionEvent evt) {                                             
         // Reset the settings to default values
         numPlayersComboBox.setSelectedIndex(0);
         gameDurComboBox.setSelectedIndex(0);
         difficultyComboBox.setSelectedIndex(1);
         colorComboBox.setSelectedIndex(0);
-
+ 
         // Close the settings dialog
         settingsDialog.setVisible(false);
     }                                            
+
+    private void aboutMenuItemActionPerformed(ActionEvent evt) {                                              
+        // TODO add your handling code here:
+    }                                             
+
+    private void quitMenuItemActionPerformed(ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void fullScreenMenuItemActionPerformed(ActionEvent evt) {                                                   
+        // TODO add your handling code here:
+    }                                                  
 
     /**
      * @param args the command line arguments
@@ -282,9 +1110,9 @@ package Project;
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
@@ -294,38 +1122,152 @@ package Project;
             java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Test test = new Test();
-                test.setSize(500,250);
-                test.setVisible(true);
+                new Test().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton cancelButton;
-    private javax.swing.JComboBox<String> colorComboBox;
-    private javax.swing.JLabel colorLabel;
-    private javax.swing.JComboBox<String> difficultyComboBox;
-    private javax.swing.JLabel difficultyLabel;
-    private javax.swing.JPanel gameBoardPanel;
-    private javax.swing.JComboBox<String> gameDurComboBox;
-    private javax.swing.JLabel gameDurLabel;
-    private javax.swing.JPanel gameMenuPanel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton loadGameButton;
-    private javax.swing.JComboBox<String> numPlayersComboBox;
-    private javax.swing.JLabel numPlayersLabel;
-    private javax.swing.JButton rulesButton;
-    private javax.swing.JDialog settingsDialog;
-    private javax.swing.JButton startGameButton;
-    private javax.swing.JButton startNewGameButton;
-    // End of variables declaration             
+    private JLabel a1Label;
+    private JLabel a2Label;
+    private JLabel a3Label;
+    private JLabel a4Label;
+    private JLabel a5Label;
+    private JLabel a6Label;
+    private JLabel a7Label;
+    private JLabel a8Label;
+    private JLabel aLabel;
+    private JLabel aLabel2;
+    private JMenuItem aboutMenuItem;
+    private JMenuItem actualSizeMenuItem;
+    private JLabel b1Label;
+    private JLabel b2Label;
+    private JLabel b3Label;
+    private JLabel b4Label;
+    private JLabel b5Label;
+    private JLabel b6Label;
+    private JLabel b7Label;
+    private JLabel b8Label;
+    private JLabel bLabel;
+    private JLabel bLabel2;
+    private JLabel c1Label;
+    private JLabel c2Label;
+    private JLabel c3Label;
+    private JLabel c4Label;
+    private JLabel c5Label;
+    private JLabel c6Label;
+    private JLabel c7Label;
+    private JLabel c8Label;
+    private JLabel cLabel;
+    private JLabel cLabel2;
+    private JButton cancelButton;
+    private JMenu chessGameMenu;
+    private JComboBox<String> colorComboBox;
+    private JLabel colorLabel;
+    private JLabel d1Label;
+    private JLabel d2Label;
+    private JLabel d3Label;
+    private JLabel d4Label;
+    private JLabel d5Label;
+    private JLabel d6Label;
+    private JLabel d7Label;
+    private JLabel d8Label;
+    private JLabel dLabel;
+    private JLabel dLabel2;
+    private JComboBox<String> difficultyComboBox;
+    private JLabel difficultyLabel;
+    private JLabel e1Label;
+    private JLabel e2Label;
+    private JLabel e3Label;
+    private JLabel e4Label;
+    private JLabel e5Label;
+    private JLabel e6Label;
+    private JLabel e7Label;
+    private JLabel e8Label;
+    private JLabel eLabel;
+    private JLabel eLabel2;
+    private JLabel eightLabel;
+    private JLabel eightLabel2;
+    private JLabel f1Label;
+    private JLabel f2Label;
+    private JLabel f3Label;
+    private JLabel f4Label;
+    private JLabel f5Label;
+    private JLabel f6Label;
+    private JLabel f7Label;
+    private JLabel f8Label;
+    private JLabel fLabel;
+    private JLabel fLabel2;
+    private JMenu fileMenu;
+    private JLabel fiveLabel;
+    private JLabel fiveLabel2;
+    private JLabel fourLabel;
+    private JLabel fourLabel2;
+    private JMenuItem fullScreenMenuItem;
+    private JLabel g1Label;
+    private JLabel g2Label;
+    private JLabel g3Label;
+    private JLabel g4Label;
+    private JLabel g5Label;
+    private JLabel g6Label;
+    private JLabel g7Label;
+    private JLabel g8Label;
+    private JLabel gLabel;
+    private JLabel gLabel2;
+    private JPanel gameBoardPanel;
+    private JComboBox<String> gameDurComboBox;
+    private JLabel gameDurLabel;
+    private JPanel gameMenuPanel;
+    private JLabel h1Label;
+    private JLabel h2Label;
+    private JLabel h3Label;
+    private JLabel h4Label;
+    private JLabel h5Label;
+    private JLabel h6Label;
+    private JLabel h7Label;
+    private JLabel h8Label;
+    private JLabel hLabel;
+    private JLabel hLabel2;
+    private JMenu helpMenu;
+    private JLabel jLabel1;
+    private JMenuBar jMenuBar1;
+    private JPanel jPanel1;
+    private JPanel jPanel4;
+    private JPanel jPanel5;
+    private JPanel jPanel6;
+    private JPanel jPanel7;
+    private JButton loadGameButton;
+    private JMenuItem loadGameMenuItem;
+    private JMenuItem newGameMenuItem;
+    private JComboBox<String> numPlayersComboBox;
+    private JLabel numPlayersLabel;
+    private JLabel oneLabel;
+    private JLabel oneLabel2;
+    private JMenuItem quitMenuItem;
+    private JButton rulesButton;
+    private JMenuItem rulesMenuItem;
+    private JMenuItem saveGameMenuItem;
+    private JDialog settingsDialog;
+    private JLabel sevenLabel;
+    private JLabel sevenLabel2;
+    private JLabel sixLabel;
+    private JLabel sixLabel2;
+    private JButton startGameButton;
+    private JButton startNewGameButton;
+    private JLabel threeLabel;
+    private JLabel threeLabel2;
+    private JLabel twoLabel;
+    private JLabel twoLabel2;
+    private JMenu viewMenu;
+    private JMenuItem zoomInMenuItem;
+    private JMenuItem zoomOutMenuItem;
+    // End of variables declaration                   
 }
