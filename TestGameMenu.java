@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.swing.GroupLayout.*;
 import javax.swing.LayoutStyle.*;
 
-public class ChessGame extends JFrame {
+public class TestGameMenu extends JFrame {
 
     /* ********************************************************************** *\
      * ************************ Variable Declaration ************************ *
@@ -12,7 +12,7 @@ public class ChessGame extends JFrame {
 
     // ************************** menuBar Variables ************************* //
     private JMenuBar menuBar;
-        private JMenu chessGameMenu;
+        private JMenu TestGameMenuMenu;
             private JMenuItem aboutMenuItem;
             private JMenuItem quitMenuItem;
         private JMenu fileMenu;
@@ -93,7 +93,7 @@ public class ChessGame extends JFrame {
 
     // Constructor that calls the method initComponents() to setup the JFrame 
     //  and its contents.
-    public ChessGame() {
+    public TestGameMenu() {
         initComponents();
         setPreferredSize(new Dimension(500,298));
         pack();
@@ -123,23 +123,23 @@ public class ChessGame extends JFrame {
     {
         menuBar = new JMenuBar();
 
-        chessGameMenu = new JMenu("ChessGame");
-        aboutMenuItem = new JMenuItem("About ChessGame");
+        TestGameMenuMenu = new JMenu("TestGameMenu");
+        aboutMenuItem = new JMenuItem("About TestGameMenu");
         aboutMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 aboutMenuItemActionPerformed(evt);
             }
         });
-        chessGameMenu.add(aboutMenuItem);
-        quitMenuItem = new JMenuItem("Quit ChessGame");
+        TestGameMenuMenu.add(aboutMenuItem);
+        quitMenuItem = new JMenuItem("Quit TestGameMenu");
         quitMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 quitMenuItemActionPerformed(evt);
             }
         });
-        chessGameMenu.add(quitMenuItem);
+        TestGameMenuMenu.add(quitMenuItem);
 
-        menuBar.add(chessGameMenu);
+        menuBar.add(TestGameMenuMenu);
 
         fileMenu = new JMenu("File");
         newGameMenuItem = new JMenuItem("New Game");
@@ -403,7 +403,7 @@ public class ChessGame extends JFrame {
 
         a7Label = new JLabel();
         a7Label.setHorizontalAlignment(SwingConstants.CENTER);
-        a7Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/With Shadow/128px/square brown dark_png_shadow_128px.png"))); // NOI18N
+        a7Label.setIcon(new ImageIcon(getClass().getResource("/assets/JohnPablok Cburnett Chess set/PNGs/No shadow/1x/square brown dark_1x_ns.png"))); // NOI18N
         a7Label.setToolTipText("A7");
         gameBoardPanel.add(a7Label);
 
@@ -1477,20 +1477,20 @@ public class ChessGame extends JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ChessGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestGameMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ChessGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestGameMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ChessGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestGameMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ChessGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestGameMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ChessGame().setVisible(true);
+                new TestGameMenu().setVisible(true);
             }
         });
     }
