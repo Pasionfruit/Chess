@@ -1,0 +1,39 @@
+Project X
+Authors: Denis and Abe
+
+Welcome, this project is our implementation of the board game Chess. 
+The rules are the same with the user running the file and either, loads a new game
+loads a previous game, or views the rules.
+
+New Game:
+    User is able to decide: 
+    How much time should be on the timer for each player.
+    Which color they would like to start.
+
+Rules:
+    Displays a image of the breakdown of the objectives and how the pieces move.
+    King - move one tile in every direction that is could not lead to his instant capture.
+    Queen - move vertically / horizontally or diagonally
+    Rook - move vertically / horizontally
+    Bishop - move diagonally
+    Knight - move in an L-shape with two in one direction and one in an adjacent direction
+    Pawn - move two steps forward given that it is it's first move, capture diagonally,  
+        Pawn maybe promoted to a higher ranked piece given it reaches the opponent's side
+
+    Check - occurs when the king is threatened of being captured
+    Game ends - when timer runs out the player that still has time wins OR when the player
+        forces another player into checkmate leaving the king no available places to move to safety.
+
+Author's Responsibilities:
+
+Denis:
+- Created and designed the GUI menu interface 
+- Designed and implemented the board and pieces 
+- Added Implemented the zoom-in/out and full screen feature
+- Implemented button functionality
+
+Abe:
+- Assisted with implementing button functionality
+- Responsible for game logic
+- Added pieces' mechanics
+- Implemented the timer feature
