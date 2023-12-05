@@ -3,6 +3,9 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout.*;
 import javax.swing.LayoutStyle.*;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 public class TestGameMenu extends JFrame {
 
@@ -1083,7 +1086,7 @@ public class TestGameMenu extends JFrame {
         numPlayersLabel = new JLabel("Number of Players:");
         numPlayersComboBox = new JComboBox<>();
         numPlayersComboBox.setMaximumRowCount(3);
-        numPlayersComboBox.setModel(new DefaultComboBoxModel<>(new String[] { "0", "1", "2" }));
+        numPlayersComboBox.setModel(new DefaultComboBoxModel<>(new String[] { "1", "2" }));
         numPlayersComboBox.setSelectedIndex(1);
         numPlayersComboBox.setToolTipText("Select the number of players");
         numPlayersComboBox.addActionListener(new ActionListener() {
@@ -1347,7 +1350,34 @@ public class TestGameMenu extends JFrame {
 
     private void rulesMenuItemActionPerformed(ActionEvent evt)
     {
-        // TODO add your handling code here:
+        JFrame rulesFrame = new JFrame("Chess Rules");
+        rulesFrame.setSize(1300, 800);
+        rulesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        try {
+            File imageFile = new File("Chess_Rules.jpg");
+            Image image = ImageIO.read(imageFile);
+
+            JLabel imageLabel = new JLabel(new ImageIcon(image));
+            rulesFrame.add(imageLabel);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        // Create "Go Back" button
+        JButton goBackButton = new JButton("Go Back");
+        goBackButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                rulesFrame.dispose(); // Close the rules window
+            }
+        });
+        rulesFrame.add(goBackButton, BorderLayout.SOUTH);
+
+        // Center the frame on the screen
+        rulesFrame.setLocationRelativeTo(null);
+        rulesFrame.setVisible(true);
     }
 
     // ******************** gameMenuPanel Action Methods ******************** //
@@ -1399,7 +1429,34 @@ public class TestGameMenu extends JFrame {
     }
 
     private void rulesButtonActionPerformed(ActionEvent evt) {                                            
-        // TODO add your handling code here:
+        JFrame rulesFrame = new JFrame("Chess Rules");
+        rulesFrame.setSize(1300, 800);
+        rulesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        try {
+            File imageFile = new File("Chess_Rules.jpg");
+            Image image = ImageIO.read(imageFile);
+
+            JLabel imageLabel = new JLabel(new ImageIcon(image));
+            rulesFrame.add(imageLabel);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        // Create "Go Back" button
+        JButton goBackButton = new JButton("Go Back");
+        goBackButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                rulesFrame.dispose(); // Close the rules window
+            }
+        });
+        rulesFrame.add(goBackButton, BorderLayout.SOUTH);
+
+        // Center the frame on the screen
+        rulesFrame.setLocationRelativeTo(null);
+        rulesFrame.setVisible(true);
     }     
 
     // ********************** gamePanel Action Methods ********************** //
