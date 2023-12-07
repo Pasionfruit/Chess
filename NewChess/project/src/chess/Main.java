@@ -8,7 +8,6 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import java.awt.*;
-import java.io.File; 
 import java.awt.event.*;
 import java.util.Iterator;
 import java.io.IOException;
@@ -49,6 +48,7 @@ public class Main extends JFrame implements MouseListener
 	private static JLabel CHNC;
 
 	private Time timer;
+	private BackgroundMusic backgroundMusic = new BackgroundMusic("BackgroundMusic.WAV");
 
 	public static Main Mainboard;
 
@@ -73,7 +73,6 @@ public class Main extends JFrame implements MouseListener
 
 	private BufferedImage image;
 	private Button rules, start, wselect, bselect, WNewPlayer, BNewPlayer;
-	private JButton goBackButton;
 	public static int timeRemaining = 60;
 	public static void main(String[] args){
 	
@@ -310,7 +309,6 @@ public class Main extends JFrame implements MouseListener
 	    };
 
 		try {
-			BackgroundMusic backgroundMusic = new BackgroundMusic("BackgroundMusic.WAV");
 			backgroundMusic.play();
 		} catch (Exception e) {
 			e.printStackTrace(); // Print the stack trace to see if any exceptions occur
@@ -525,6 +523,7 @@ public class Main extends JFrame implements MouseListener
     	cleandestinations(destinationlist);
     	displayTime.disable();
     	timer.countdownTimer.stop();
+		backgroundMusic.stop();
     	if(previous!=null)
     		previous.removePiece();
     	if(chance==0)
