@@ -2,16 +2,11 @@ Project X
 Authors: Denis and Abe
 
 Welcome, this project is our implementation of the board game Chess. 
-The rules are the same with the user running the file and either, loads a new game
-loads a previous game, or views the rules.
-
-New Game:
-    User is able to decide: 
-    How much time should be on the timer for each player.
-    Which color they would like to start.
+The rules are the same with the original game of chess however no En passant, pawn promotion or castling is implemented.
+Players have a running profile that keeps a record of the player's stats. Users may also look at the rules and adjust 
+the timer each player has before they lose a turn.  
 
 Rules:
-    Displays a image of the breakdown of the objectives and how the pieces move.
     King - move one tile in every direction that is could not lead to his instant capture.
     Queen - move vertically / horizontally or diagonally
     Rook - move vertically / horizontally
@@ -27,13 +22,13 @@ Rules:
 Author's Responsibilities:
 
 Denis:
-- Created and designed the GUI menu interface 
-- Designed and implemented the board and pieces 
-- Added Implemented the zoom-in/out and full screen feature  
-- Implemented button functionality
+- Created and designed the GUI menu interface - Responsible for designing the buttons and fonts
+- Designed and implemented the board and pieces - Responsible for finding the colors of the board and images for the pieces (all jpg and png files)
+- Assisted towards Main.Java and Cell.java
+- Implemented button functionality - Ensures that proper files open when buttons are pressed
 
 Abe:
-- Assisted with implementing button functionality
-- Responsible for game logic
-- Added pieces' mechanics
-- Implemented the timer and music features
+- Responsible for pieces and game logic - Editor of the pieces folder java files
+- Assisted towards Main.Java and Cell.java
+- Implemented the timer and music features - Responsible for both Time and Music files and implementation
+- Assisted with GUI - Helped determine colors
