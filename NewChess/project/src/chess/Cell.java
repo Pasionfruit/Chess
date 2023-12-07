@@ -73,7 +73,6 @@ public class Cell extends JPanel implements Cloneable{
 		}
 	}
 	
-	
 	public Piece getpiece()    //Function to access piece of a particular cell
 	{
 		return this.piece;
@@ -81,7 +80,7 @@ public class Cell extends JPanel implements Cloneable{
 	
 	public void select()       //Function to mark a cell indicating it's selection
 	{
-		this.setBorder(BorderFactory.createLineBorder(Color.green,8));
+		this.setBorder(BorderFactory.createLineBorder(Color.yellow,8));
 		this.isSelected=true;
 	}
 	
@@ -95,20 +94,27 @@ public class Cell extends JPanel implements Cloneable{
 		this.setBorder(null);
 		this.isSelected=false;
 	}
+
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		int cellSize = getWidth(); 
+		if (ispossibledestination) {
+			g.setColor(Color.GRAY);
+			g.fillOval(cellSize / 4, cellSize / 4, cellSize / 2, cellSize / 2);
+		}
+	}
 	
 	public void setpossibledestination()     //Function to highlight a cell to indicate that it is a possible valid move
 	{
-		int cellSize = getWidth(); // Assuming cells are square, use getWidth() to get the size
-		Graphics g = getGraphics();
-		g.setColor(Color.GRAY);
-		g.fillOval(cellSize / 4, cellSize / 4, cellSize / 2, cellSize / 2);
 		this.ispossibledestination = true;
+		repaint();
 	}
 	
 	public void removepossibledestination()      //Remove the cell from the list of possible moves
 	{
 		this.setBorder(null);
 		this.ispossibledestination=false;
+		repaint();
 	}
 	
 	public boolean ispossibledestination()    //Function to check if the cell is a possible destination 

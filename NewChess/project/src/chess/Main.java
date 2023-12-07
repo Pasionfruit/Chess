@@ -72,8 +72,8 @@ public class Main extends JFrame implements MouseListener
 	private JSlider timeSlider;
 
 	private BufferedImage image;
-	private Button start, wselect, bselect, WNewPlayer, BNewPlayer;
-	private JButton rules;
+	private Button rules, start, wselect, bselect, WNewPlayer, BNewPlayer;
+	private JButton goBackButton;
 	public static int timeRemaining = 60;
 	public static void main(String[] args){
 	
@@ -105,7 +105,7 @@ public class Main extends JFrame implements MouseListener
 	//Setting up the board
 	Mainboard = new Main();
 	Mainboard.setVisible(true);	
-	Mainboard.setResizable(false);
+	Mainboard.setResizable(true);
 	}
 	
 	//Constructor
@@ -137,7 +137,6 @@ public class Main extends JFrame implements MouseListener
 		timeSlider.setPaintTicks(true);
 		timeSlider.addChangeListener(new TimeChange());
 		
-		
 		//Fetching Details of all Players
 		wplayer= Player.fetch_players();
 		Iterator<Player> witr=wplayer.iterator();
@@ -158,7 +157,7 @@ public class Main extends JFrame implements MouseListener
 		setSize (Width, Height);
 		setTitle ("Chess");
 		content.setBackground(Color.black);
-		controlPanel=new JPanel();
+		controlPanel = new JPanel();
 		content.setLayout(new BorderLayout());
 		controlPanel.setLayout(new GridLayout(3,3));
 		controlPanel.setBorder(BorderFactory.createTitledBorder(null, "STATS", TitledBorder.TOP,TitledBorder.CENTER, new Font("Arial",Font.BOLD,30)));
@@ -206,7 +205,6 @@ public class Main extends JFrame implements MouseListener
 		BlackPlayer.add(blackstats,BorderLayout.WEST);
 		controlPanel.add(WhitePlayer);
 		controlPanel.add(BlackPlayer);
-		
 		
 		//Defining all the Cells
 		boardState=new Cell[8][8];
@@ -268,33 +266,34 @@ public class Main extends JFrame implements MouseListener
 		start.setMinimumSize(new Dimension(120, 40));
         start.setPreferredSize(new Dimension(120, 40));
 
-		rules = new JButton("Rules");
-        rules.setBackground(new Color(221, 221, 221));
-        rules.setForeground(new Color(0, 0, 0));
-        rules.setToolTipText("Display game rules");
-        rules.setFocusable(false);
-        rules.setMaximumSize(null);
-        rules.setMinimumSize(new Dimension(120, 40));
+		rules = new Button("RULES");
+		rules.setFont(new Font("Arial",Font.PLAIN,12));
+		rules.setBackground(new Color(221, 221, 221));
+		rules.setForeground(new Color(0, 0, 0));
+		rules.setFocusable(false);
+		start.setMaximumSize(null);
+		rules.setMinimumSize(new Dimension(120, 40));
         rules.setPreferredSize(new Dimension(120, 40));
-        rules.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                rulesButtonActionPerformed(evt);
-            }
-        });
+
+		rules.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				rulesButtonActionPerformed(evt);
+			}
+		});
 
 		setTime.setFont(new Font("Arial",Font.BOLD,16));
 		label = new JLabel("Time Starts now", JLabel.CENTER);
-		  label.setFont(new Font("SERIF", Font.BOLD, 30));
+		  label.setFont(new Font("Arial", Font.BOLD, 30));
 	      displayTime=new JPanel(new FlowLayout());
-	      time=new JPanel(new GridLayout(3,3));
+	      time=new JPanel(new GridLayout(4,3));
 	      time.add(setTime);
 	      time.add(showPlayer);
 	      displayTime.add(start);
+		  displayTime.add(rules);
 	      time.add(displayTime);
 	      controlPanel.add(time);
 		board.setMinimumSize(new Dimension(800,700));
-		
-		//The Left Layout When Game is inactive
+	
 		temp=new JPanel(){
 			private static final long serialVersionUID = 1L;
 			     
@@ -310,45 +309,51 @@ public class Main extends JFrame implements MouseListener
 			}         
 	    };
 
+		try {
+			BackgroundMusic backgroundMusic = new BackgroundMusic("BackgroundMusic.WAV");
+			backgroundMusic.play();
+		} catch (Exception e) {
+			e.printStackTrace(); // Print the stack trace to see if any exceptions occur
+		}
+		
 		temp.setMinimumSize(new Dimension(800,700));
 		controlPanel.setMinimumSize(new Dimension(285,700));
-		split = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,temp, controlPanel);
+		split = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, controlPanel, temp);
 		
 	    content.add(split);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 	
-	private void rulesButtonActionPerformed(ActionEvent evt)
-    {
-        JFrame rulesFrame = new JFrame("Chess Rules");
-        rulesFrame.setSize(1300, 800);
-        rulesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        try {
-            File imageFile = new File("Chess_Rules.jpg");
-            Image image = ImageIO.read(imageFile);
-
-            JLabel imageLabel = new JLabel(new ImageIcon(image));
-            rulesFrame.add(imageLabel);
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-        // Create "Go Back" button
-        JButton goBackButton = new JButton("Go Back");
-        goBackButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                rulesFrame.dispose(); // Close the rules window
-            }
-        });
-        rulesFrame.add(goBackButton, BorderLayout.SOUTH);
-
-        // Center the frame on the screen
-        rulesFrame.setLocationRelativeTo(null);
-        rulesFrame.setVisible(true);
-    }
+	private void rulesButtonActionPerformed(ActionEvent evt) {
+		JFrame rulesFrame = new JFrame("Chess Rules");
+		rulesFrame.setSize(500, 300);
+		rulesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	
+		JTextArea textArea = new JTextArea();
+		textArea.setText("The Rules:\n\nHow to move the pieces \nKing - Moves and captures in one space in any direction, if being threaten to be captured, must be protected with other pieces or moved to safety \nQueen - Moves or captures diagonally and in a straight Line \nRook - Moves and captures in a straight line, up, or down \nBishop - Moves or captures diagonally \nKnight - Moves and captures in an L-shape (two square in one direction and one in an adjacent side) \nPawn - May move two squares forward initally but after moving can only move forward one space and capture diagonally forward \n\n How to win \n CheckMate the opposing king by forcing his position where he can not move to a safe square and there is not a piece able to defend the King \n\n Special Features: \nBackground Music, Recording of players stats (# of Games and # of wins), Visible points of possible moves, Timer - when the clock runs out the player loses a turn, and indicator of unsafe King. \n\n Unsupported typical features: \nEn passant, Castling, and Pawn Promotion.");
+		textArea.setEditable(false);
+	
+		JScrollPane scrollPane = new JScrollPane(textArea);
+	
+		JButton goBackButton = new JButton("Go Back");
+		goBackButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				rulesFrame.dispose(); // Close the rules window
+			}
+		});
+	
+		JPanel panel = new JPanel(new BorderLayout());
+		panel.add(scrollPane, BorderLayout.CENTER);
+		panel.add(goBackButton, BorderLayout.SOUTH);
+	
+		rulesFrame.add(panel);
+	
+		// Center the frame on the screen
+		rulesFrame.setLocationRelativeTo(null);
+		rulesFrame.setVisible(true);
+	}
+	
 
 	// A function to change the chance from White Player to Black Player or vice verse
 	// It is made public because it is to be accessed in the Time Class
@@ -370,10 +375,10 @@ public class Main extends JFrame implements MouseListener
 			timer.reset();
 			timer.start();
 			showPlayer.remove(CHNC);
-			if(Main.move=="WHITE")
-				Main.move="BLACK";
-			else
+			if(Main.move=="BLACK")
 				Main.move="WHITE";
+			else
+				Main.move="BLACK";
 			CHNC.setText(Main.move);
 			showPlayer.add(CHNC);
 		}
@@ -404,8 +409,7 @@ public class Main extends JFrame implements MouseListener
     		it.next().setpossibledestination();
     }
     
-    
-  //Function to check if the king will be in danger if the given move is made
+  	//Function to check if the king will be in danger if the given move is made
     private boolean willkingbeindanger(Cell fromcell,Cell tocell)
     {
     	Cell newboardstate[][] = new Cell[8][8];
@@ -514,8 +518,7 @@ public class Main extends JFrame implements MouseListener
     	}
     	return true;
     }
-	
-    
+	  
     @SuppressWarnings("deprecation")
 	private void gameend()
     {
