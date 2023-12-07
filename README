@@ -29,11 +29,11 @@ Author's Responsibilities:
 Denis:
 - Created and designed the GUI menu interface 
 - Designed and implemented the board and pieces 
-- Added Implemented the zoom-in/out and full screen feature
+- Added Implemented the zoom-in/out and full screen feature  
 - Implemented button functionality
 
 Abe:
 - Assisted with implementing button functionality
 - Responsible for game logic
 - Added pieces' mechanics
-- Implemented the timer feature
+- Implemented the timer and music features

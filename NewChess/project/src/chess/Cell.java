@@ -98,9 +98,22 @@ public class Cell extends JPanel implements Cloneable{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		int cellSize = getWidth(); 
+	
 		if (ispossibledestination) {
-			g.setColor(Color.GRAY);
-			g.fillOval(cellSize / 4, cellSize / 4, cellSize / 2, cellSize / 2);
+			Graphics2D g2d = (Graphics2D) g;
+			
+			// Set the white color for the outline
+			g2d.setColor(Color.WHITE);
+			
+			// Draw the white outline of the oval
+			g2d.setStroke(new BasicStroke(4)); // Adjust the thickness of the outline as needed
+			g2d.drawOval(cellSize / 4, cellSize / 4, cellSize / 2, cellSize / 2);
+			
+			// Set the color for the filled oval
+			g2d.setColor(new Color(128, 0, 32)); // Change to your desired filled oval color
+			
+			// Fill the oval
+			g2d.fillOval(cellSize / 4, cellSize / 4, cellSize / 2, cellSize / 2);
 		}
 	}
 	

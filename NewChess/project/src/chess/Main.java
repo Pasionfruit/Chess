@@ -48,7 +48,7 @@ public class Main extends JFrame implements MouseListener
 	private static JLabel CHNC;
 
 	private Time timer;
-	private BackgroundMusic backgroundMusic = new BackgroundMusic("BackgroundMusic.WAV");
+	private BackgroundMusic backgroundMusic = new BackgroundMusic("BackgroundMusic.WAV"), celebrationMusic = new BackgroundMusic("CelebrationMusic.WAV");
 
 	public static Main Mainboard;
 
@@ -328,7 +328,7 @@ public class Main extends JFrame implements MouseListener
 		rulesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	
 		JTextArea textArea = new JTextArea();
-		textArea.setText("The Rules:\n\nHow to move the pieces \nKing - Moves and captures in one space in any direction, if being threaten to be captured, must be protected with other pieces or moved to safety \nQueen - Moves or captures diagonally and in a straight Line \nRook - Moves and captures in a straight line, up, or down \nBishop - Moves or captures diagonally \nKnight - Moves and captures in an L-shape (two square in one direction and one in an adjacent side) \nPawn - May move two squares forward initally but after moving can only move forward one space and capture diagonally forward \n\n How to win \n CheckMate the opposing king by forcing his position where he can not move to a safe square and there is not a piece able to defend the King \n\n Special Features: \nBackground Music, Recording of players stats (# of Games and # of wins), Visible points of possible moves, Timer - when the clock runs out the player loses a turn, and indicator of unsafe King. \n\n Unsupported typical features: \nEn passant, Castling, and Pawn Promotion.");
+		textArea.setText("The Rules:\n\n How to move the pieces \n King - Moves and captures in one space in any direction, if being threaten to be captured, must be protected with other pieces or moved to safety \n Queen - Moves or captures diagonally and in a straight Line \n Rook - Moves and captures in a straight line, up, or down \n Bishop - Moves or captures diagonally \n Knight - Moves and captures in an L-shape (two square in one direction and one in an adjacent side) \nPawn - May move two squares forward initally but after moving can only move forward one space and capture diagonally forward \n\n How to win \n CheckMate the opposing king by forcing his position where he can not move to a safe square and there is not a piece able to defend the King \n\n Special Features: \n Background Music, Recording of players stats (# of Games and # of wins), Visible points of possible moves, Timer - when the clock runs out the player loses a turn, and indicator of unsafe King. \n\n Unsupported typical features: \n En passant, Castling, and Pawn Promotion.");
 		textArea.setEditable(false);
 	
 		JScrollPane scrollPane = new JScrollPane(textArea);
@@ -524,6 +524,7 @@ public class Main extends JFrame implements MouseListener
     	displayTime.disable();
     	timer.countdownTimer.stop();
 		backgroundMusic.stop();
+		celebrationMusic.play();
     	if(previous!=null)
     		previous.removePiece();
     	if(chance==0)
@@ -538,6 +539,7 @@ public class Main extends JFrame implements MouseListener
 			winner=Black.name();
 		}
 		JOptionPane.showMessageDialog(board,"Checkmate!!!\n"+winner+" wins");
+		
 		WhitePlayer.remove(wdetails);
 		BlackPlayer.remove(bdetails);
 		displayTime.remove(label);
@@ -560,6 +562,7 @@ public class Main extends JFrame implements MouseListener
 		Mainboard = new Main();
 		Mainboard.setVisible(true);
 		Mainboard.setResizable(false);
+		celebrationMusic.stop();
     }
     
     //These are the abstract function of the parent class. Only relevant method here is the On-Click Fuction
@@ -691,7 +694,7 @@ public class Main extends JFrame implements MouseListener
 		// TODO Auto-generated method stub
 		
 		if(White==null||Black==null)
-			{JOptionPane.showMessageDialog(controlPanel, "Fill in the details");
+			{JOptionPane.showMessageDialog(controlPanel, "Please enter a name");
 			return;}
 		White.updateGamesPlayed();
 		White.Update_Player();
