@@ -25,12 +25,14 @@ How to use the interface:
     
 Compiling:
     Should be good to go and just run the jar file but if it does not work,
-    go into the NewChess folder > project folder
+    go into the project folder
 
-    "javac -d bin src/chess/*.java src/pieces/*.java"
+    "javac -d ../bin chess/*.java pieces/*.java"
     (runs all the files in both chess and pieces folders and puts the class files in bin)
 
-    then go to the bin folder (cd bin) and run
+    then ;eave the src folder and go to the bin folder (cd bin) and run
+    "cd .."
+    "cd bin"
     "Java chess.Main"
 
 Extra features:
