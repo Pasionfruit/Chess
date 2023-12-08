@@ -1,6 +1,7 @@
 Project X
 Authors: Dennis Bechtle and Abe Pasion
 
+*** THE AUDIO FEATURE DOES NOT WORK UNLESS USED COMPILED DIRECTED BELOW ***
 Welcome, this project is our implementation of the board game Chess. 
 The rules are the same with the original game of chess however no En passant, pawn promotion or castling is implemented.
 Players have a running profile that keeps a record of the player's stats. Users may also look at the rules and adjust 
@@ -20,8 +21,8 @@ Rules:
         forces another player into checkmate leaving the king no available places to move to safety.
 
 How to use the interface:
-    Click on the piece you want to move and there will be circles displaying possible moves. Click on the  
-        corresponding spot you would like to place the piece.
+    Click on the piece you want to move and there will be circles displaying possible moves. 
+        Click on the corresponding spot you would like to place the piece.
     
 Compiling:
     Should be good to go and just run the jar file but if it does not work,
@@ -37,7 +38,7 @@ Compiling:
 
 Extra features:
     Timer - Allows users to set a timer for each move and losses a turn if a move was not made in time
-    Music - Plays background music and celebration music upon winning
+    Music - Plays background music and celebration music upon winning; *** THE AUDIO FEATURE DOES NOT WORK UNLESS USED COMPILED DIRECTED ABOVE ***
     Player - Saves the player information: name, games played, and games won
 
 Author's Responsibilities:
