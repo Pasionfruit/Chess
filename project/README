@@ -30,7 +30,7 @@ Compiling:
     "javac -d ../bin chess/*.java pieces/*.java"
     (runs all the files in both chess and pieces folders and puts the class files in bin)
 
-    then ;eave the src folder and go to the bin folder (cd bin) and run
+    then leave the src folder and go to the bin folder (cd bin) and run
     "cd .."
     "cd bin"
     "Java chess.Main"
