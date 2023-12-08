@@ -311,7 +311,7 @@ public class Main extends JFrame implements MouseListener
 		try {
 			backgroundMusic.play();
 		} catch (Exception e) {
-			e.printStackTrace(); // Print the stack trace to see if any exceptions occur
+			e.printStackTrace(); 
 		}
 		
 		temp.setMinimumSize(new Dimension(800,700));
@@ -337,7 +337,7 @@ public class Main extends JFrame implements MouseListener
 		goBackButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				rulesFrame.dispose(); // Close the rules window
+				rulesFrame.dispose(); 
 			}
 		});
 	
@@ -347,14 +347,10 @@ public class Main extends JFrame implements MouseListener
 	
 		rulesFrame.add(panel);
 	
-		// Center the frame on the screen
 		rulesFrame.setLocationRelativeTo(null);
 		rulesFrame.setVisible(true);
 	}
 	
-
-	// A function to change the chance from White Player to Black Player or vice verse
-	// It is made public because it is to be accessed in the Time Class
 	public void changechance()
 	{
 		if (boardState[getKing(chance).getx()][getKing(chance).gety()].ischeck())
@@ -564,12 +560,9 @@ public class Main extends JFrame implements MouseListener
 		Mainboard.setResizable(false);
 		celebrationMusic.stop();
     }
-    
-    //These are the abstract function of the parent class. Only relevant method here is the On-Click Fuction
-    //which is called when the user clicks on a particular cell
+
 	@Override
 	public void mouseClicked(MouseEvent arg0){
-		// TODO Auto-generated method stub
 		c=(Cell)arg0.getSource();
 		if (previous==null)
 		{
@@ -671,8 +664,7 @@ public class Main extends JFrame implements MouseListener
 			((King)c.getpiece()).sety(c.y);
 		}
 	}
-    
-    //Other Irrelevant abstract function. Only the Click Event is captured.
+
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 	}
@@ -691,7 +683,6 @@ public class Main extends JFrame implements MouseListener
 		@SuppressWarnings("deprecation")
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
 		
 		if(White==null||Black==null)
 			{JOptionPane.showMessageDialog(controlPanel, "Please enter a name");
@@ -741,13 +732,11 @@ public class Main extends JFrame implements MouseListener
 			@Override
 			public void actionPerformed(ActionEvent arg0)
 			{
-				// TODO Auto-generated method stub
 				tempPlayer=null;
 				String n=(color==0)?wname:bname;
 				JComboBox<String> jc=(color==0)?wcombo:bcombo;
 				JComboBox<String> ojc=(color==0)?bcombo:wcombo;
 				ArrayList<Player> pl=(color==0)?wplayer:bplayer;
-				//ArrayList<Player> otherPlayer=(color==0)?bplayer:wplayer;
 				ArrayList<Player> opl=Player.fetch_players();
 				if(opl.isEmpty())
 					return;
@@ -803,7 +792,6 @@ public class Main extends JFrame implements MouseListener
 		}
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
 			String n=(color==0)?wname:bname;
 			JPanel j=(color==0)?WhitePlayer:BlackPlayer;
 			ArrayList<Player> N=Player.fetch_players();

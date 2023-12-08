@@ -34,8 +34,9 @@ Compiling:
     "Java chess.Main"
 
 Extra features:
-    Timer - allows users to set a timer for each move and losses a turn if a move was not made in time
-    Music - plays background music and celebration music upon winning
+    Timer - Allows users to set a timer for each move and losses a turn if a move was not made in time
+    Music - Plays background music and celebration music upon winning
+    Player - Saves the player information: name, games played, and games won
 
 Author's Responsibilities:
 
