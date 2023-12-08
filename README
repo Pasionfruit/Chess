@@ -1,5 +1,5 @@
 Project X
-Authors: Denis and Abe
+Authors: Dennis Bechtle and Abe Pasion
 
 Welcome, this project is our implementation of the board game Chess. 
 The rules are the same with the original game of chess however no En passant, pawn promotion or castling is implemented.
@@ -19,9 +19,27 @@ Rules:
     Game ends - when timer runs out the player that still has time wins OR when the player
         forces another player into checkmate leaving the king no available places to move to safety.
 
+How to use the interface:
+    Click on the piece you want to move and there will be circles displaying possible moves. Click on the  
+        corresponding spot you would like to place the piece.
+    
+Compiling:
+    Should be good to go and just run the jar file but if it does not work,
+    go into the NewChess folder > project folder > src folder and run
+
+    "javac chess/*.java pieces/*.java -d bin"
+    (runs all the files in both chess and pieces folders and puts the class files in bin)
+
+    then go to the bin folder (cd bin) and run
+    "Java chess.Main"
+
+Extra features:
+    Timer - allows users to set a timer for each move and losses a turn if a move was not made in time
+    Music - plays background music and celebration music upon winning
+
 Author's Responsibilities:
 
-Denis:
+Dennis:
 - Created and designed the GUI menu interface - Responsible for designing the buttons and fonts
 - Designed and implemented the board and pieces - Responsible for finding the colors of the board and images for the pieces (all jpg and png files)
 - Assisted towards Main.Java and Cell.java
